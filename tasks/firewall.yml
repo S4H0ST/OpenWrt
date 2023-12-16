@@ -1,0 +1,16 @@
+- hosts: Aps
+  tasks:
+  - name: accept input
+    ansible.builtin.replace:
+        path: /etc/config/firewall
+        regexp: option input            REJECT
+        replace: option input            ACCEPT
+        
+  - name: Reload network config
+    ansible.builtin.shell:
+        cmd: /etc/init.d/network reload
+        chdir: /etc/init.d
+
+    ansible.builtin.shell:
+        cmd: /etc/init.d/network enable
+        chdir: /etc/init.d

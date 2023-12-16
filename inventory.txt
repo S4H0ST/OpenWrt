@@ -1,0 +1,10 @@
+# Fichero para declarar los target y sus credenciales
+[Aps]
+OPENWRT	    ansible_host=10.103.81.99  ansible_user=root ansible_sudo_pass=123 ansible_ssh_pass=123 ansible_python_interpreter=/usr/bin/python3
+#OPENWRT1	ansible_host=10.103.82.166 ansible_user=root ansible_sudo_pass=123 ansible_ssh_pass=123 ansible_python_interpreter=/usr/bin/python3
+#OPENWRT2	ansible_host=10.103.82.224 ansible_user=root ansible_sudo_pass=123 ansible_ssh_pass=123 ansible_python_interpreter=/usr/bin/python3
+#OPENWRT4	ansible_host=10.103.81.253 ansible_user=root ansible_sudo_pass=123 ansible_ssh_pass=123 ansible_python_interpreter=/usr/bin/python3
+
+[Aps:vars]
+ssdi_name=soha
+

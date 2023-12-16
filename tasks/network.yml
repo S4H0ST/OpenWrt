@@ -1,0 +1,17 @@
+- hosts: Aps
+  tasks:
+  - name: Copy network profile
+    ansible.builtin.copy:
+        src: ../config/network
+        dest: /etc/config/network
+        
+  - name: Enable network config
+    ansible.builtin.shell:
+      cmd: /etc/init.d/network enable
+      chdir: /etc/init.d
+
+  - name: Reload network config
+    ansible.builtin.shell:
+      cmd: /etc/init.d/network reload
+      chdir: /etc/init.d
+  

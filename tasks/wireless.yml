@@ -1,0 +1,21 @@
+- hosts: Aps
+  tasks:
+  - name: change wireless name
+    ansible.builtin.replace:
+        path: /etc/config/wireless
+        regexp: option disabled '1'
+        replace: option disabled '0'
+  - name: Reload network config
+    ansible.builtin.shell:
+        cmd: /etc/init.d/network reload
+        chdir: /etc/init.d
+
+    ansible.builtin.shell:
+        cmd: /etc/init.d/network enable
+        chdir: /etc/init.d
+        
+    ansible.builtin.shell:
+        cmd: uci commit wireless
+        chdir: /etc/config
+  
+   
